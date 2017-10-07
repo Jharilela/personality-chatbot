@@ -14,6 +14,7 @@ const replyMessage = (message) => {
 
   // Get senderId to catch unique conversation_token
   const senderId = message.senderId
+  console.log(message)
   console.log('I received the message: '+text+' \n from: '+message.senderId)
 
   // Call Recast.AI SDK, through /converse route
