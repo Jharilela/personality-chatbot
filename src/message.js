@@ -18,7 +18,7 @@ const replyMessage = (message) => {
   // Get senderId to catch unique conversation_token
   if(message && message.message && message.message.data && message.message.data.userName && message.message.data.userName == "Jayant Harilela")
     message.learning = true
-  console.log('I received the message: ',message.senderId)
+  console.log('I received the message: ',message)
 
   // Call Recast.AI SDK, through /converse route
   request.converseText(text, { conversationToken: senderId })
