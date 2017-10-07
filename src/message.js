@@ -12,10 +12,13 @@ const replyMessage = (message) => {
   // Get text from message received
   const text = message.content
 
+  var learning = 0 
+  //if the person messaging is Jayant Harilela, it will learn from the personality and the learning variable will be set to 1
+
   // Get senderId to catch unique conversation_token
-  const senderId = message.senderId
-  console.log(message)
-  console.log('I received the message: '+text+' \n from: '+message.senderId)
+  if(message && message.message && message.message.data && message.message.data.userName && message.message.data.userName == "Jayant Harilela")
+    message.learning = true
+  console.log('I received the message: ',message.senderId)
 
   // Call Recast.AI SDK, through /converse route
   request.converseText(text, { conversationToken: senderId })
